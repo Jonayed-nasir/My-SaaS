@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 
-// Column label generator
 const getColumnLabel = (n) => {
   let label = "";
   while (n >= 0) {
@@ -13,40 +12,33 @@ const getColumnLabel = (n) => {
 };
 
 export default function Spreadsheet({ sheet, setSheet }) {
-  const [selected, setSelected] = useState({ row: 0, col: 0 });
-  const [columns, setColumns] = useState(Array(sheet?.cols || 10).fill({ width: 120 }));
-  const [rowHeights, setRowHeights] = useState(Array(sheet?.rows || 20).fill(30));
-
-  const resizing = useRef(null);
-
   if (!sheet) return <p className="p-4 text-gray-500">No sheet selected</p>;
 
-  const { rows, data } = sheet;
+  const { rows = 20, cols = 10, data = {} } = sheet;
 
-  // Handle cell input
+  const [selected, setSelected] = useState({ row: 0, col: 0 });
+  const [columns, setColumns] = useState(Array(cols).fill({ width: 120 }));
+  const [rowHeights, setRowHeights] = useState(Array(rows).fill(30));
+  const resizing = useRef(null);
+
   const handleCellChange = (row, col, value) => {
     const key = `${row}-${col}`;
     const newData = { ...data, [key]: value };
     setSheet({ ...sheet, data: newData });
 
-    // Auto add row
     if (row === rows - 1) setSheet({ ...sheet, data: newData, rows: rows + 1 });
-    // Auto add column
     if (col === columns.length - 1) {
       setColumns([...columns, { width: 120 }]);
-      setSheet({ ...sheet, data: newData, cols: columns.length + 1, rows: sheet.rows });
-      setRowHeights((prev) => [...prev]);
+      setSheet({ ...sheet, data: newData, cols: columns.length + 1, rows });
     }
   };
 
-  // Column resize
   const startColResize = (e, index) => {
     resizing.current = { type: "col", index, startX: e.clientX, startWidth: columns[index].width };
     window.addEventListener("mousemove", onResize);
     window.addEventListener("mouseup", stopResize);
   };
 
-  // Row resize
   const startRowResize = (e, index) => {
     resizing.current = { type: "row", index, startY: e.clientY, startHeight: rowHeights[index] };
     window.addEventListener("mousemove", onResize);
@@ -55,7 +47,6 @@ export default function Spreadsheet({ sheet, setSheet }) {
 
   const onResize = (e) => {
     if (!resizing.current) return;
-
     if (resizing.current.type === "col") {
       const { index, startX, startWidth } = resizing.current;
       const newWidth = Math.max(50, startWidth + e.clientX - startX);
@@ -63,7 +54,6 @@ export default function Spreadsheet({ sheet, setSheet }) {
       newCols[index] = { width: newWidth };
       setColumns(newCols);
     }
-
     if (resizing.current.type === "row") {
       const { index, startY, startHeight } = resizing.current;
       const newHeight = Math.max(20, startHeight + e.clientY - startY);

@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import SheetTabs from "@/app/components/SheetTabs";
-import Spreadsheet from "@/app/components/Spreadsheet";
+// app/dashboard/sheet/page.jsx
+import SheetTabs from "../../components/SheetTabs";
+import Spreadsheet from "../../components/Spreadsheet";
+
 
 export default function SheetPage() {
   const [sheets, setSheets] = useState([]); // no default sheet
