@@ -1,24 +1,30 @@
-// app/dashboard/connect/page.js
 "use client";
 
+import { useState } from "react";
+import ConnectForm from "../../components/ConnectForm";
+
 export default function ConnectPage() {
+  const [connected, setConnected] = useState(false);
+  const [pageName, setPageName] = useState("");
+
   const handleConnect = () => {
-    // এখানে Facebook OAuth redirect হবে
-    window.location.href = "/api/oauth/facebook";
+    // এখানে তোমার backend OAuth redirect দিতে হবে
+    window.location.href = "/api/facebook/connect";
+  };
+
+  const handleDisconnect = () => {
+    setConnected(false);
+    setPageName("");
   };
 
   return (
-    <div className="bg-white p-6 rounded-md shadow">
-      <h2 className="text-xl font-semibold mb-4">Connect Facebook</h2>
-      <p className="mb-4 text-gray-600">
-        Connect your Facebook Page to automate comments & Messenger replies.
-      </p>
-      <button
-        onClick={handleConnect}
-        className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
-      >
-        Connect Facebook
-      </button>
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
+      <ConnectForm
+        connected={connected}
+        pageName={pageName}
+        onConnect={handleConnect}
+        onDisconnect={handleDisconnect}
+      />
     </div>
   );
 }
