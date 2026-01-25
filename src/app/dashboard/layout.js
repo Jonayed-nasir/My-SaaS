@@ -1,5 +1,5 @@
 // app/dashboard/layout.jsx
-
+"use client";
 
 import Sidebar from "../components/Sidebar";
 import TopNav from "../components/TopNav";
