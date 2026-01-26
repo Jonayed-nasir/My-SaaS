@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 // app/dashboard/sheet/page.jsx
-import SheetTabs from "../../components/SheetTabs";
-import Spreadsheet from "../../components/Spreadsheet";
+import SheetTabs from "../../../(main)/components/SheetTabs";
+import Spreadsheet from "../../../(main)/components/Spreadsheet";
 
 
 export default function SheetPage() {
