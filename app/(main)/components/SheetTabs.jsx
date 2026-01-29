@@ -21,6 +21,7 @@ export default function SheetTabs({
           className={`flex items-center px-4 py-2 cursor-pointer gap-2 ${
             sheet.id === activeSheetId ? "bg-gray-200 font-bold" : ""
           }`}
+        
         >
           <span onClick={() => setActiveSheetId(sheet.id)}>{sheet.name}</span>
           <button
