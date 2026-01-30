@@ -71,13 +71,13 @@ function Footer() {
           {/* Newsletter */}
           <div className="mt-6">
             <h4 className="text-md font-semibold mb-2">নিউজলেটার সাবস্ক্রাইব</h4>
-            <div className="flex gap-2">
+            <div className="flex gap-2 ">
               <input 
                 type="email" 
                 placeholder="আপনার ইমেইল লিখুন" 
                 className="flex-1 p-2 rounded-l-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500"
               />
-              <button className="px-4 bg-pink-500 rounded-r-lg hover:bg-pink-600 transition font-semibold">সাবস্ক্রাইব</button>
+              <button className="px-3 bg-pink-500 rounded-r-lg hover:bg-pink-600 transition font-semibold cursor-pointer">Subscribe</button>
             </div>
           </div>
         </div>

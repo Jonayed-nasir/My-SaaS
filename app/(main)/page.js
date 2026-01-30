@@ -35,14 +35,14 @@ export default function HomePage() {
         href="/signup"
         className="px-8 py-4 rounded-xl bg-white text-blue-600 font-bold shadow-lg hover:scale-105 transform transition duration-300 hover:shadow-2xl"
       >
-        শুরু করুন
+        Get start free
       </Link>
 
       <Link
         href="/about"
         className="px-8 py-4 rounded-xl border border-white/50 text-white font-medium hover:bg-white/20 transition duration-300"
       >
-        আরও জানুন
+        Learn more
       </Link>
     </div>
 
@@ -70,7 +70,7 @@ export default function HomePage() {
           আপনার Facebook পোস্ট, পেজ ও অ্যাডের কমেন্টে স্বয়ংক্রিয়ভাবে উত্তর দেবে। আর কখনো engagement মিস হবে না।
         </p>
         <span className="mt-6 inline-block px-5 py-2 bg-white text-blue-600 font-semibold rounded-full shadow-md group-hover:scale-105 transform transition text-center">
-          আরও জানুন
+          Learn more
         </span>
       </div>
     </div>
@@ -84,7 +84,7 @@ export default function HomePage() {
           Facebook Messenger এবং WhatsApp থেকে সব মেসেজ এক জায়গায় ম্যানেজ করুন এবং সঙ্গে সঙ্গে উত্তর দিন।
         </p>
         <span className="mt-6 inline-block px-5 py-2 bg-white text-green-600 font-semibold rounded-full shadow-md group-hover:scale-105 transform transition text-center">
-          আরও জানুন
+          Learn more
         </span>
       </div>
     </div>
@@ -98,7 +98,7 @@ export default function HomePage() {
           YouTube কমেন্টগুলো স্বয়ংক্রিয়ভাবে ম্যানেজ করুন এবং উত্তর দিন, যাতে আপনার চ্যানেলের এনগেজমেন্ট বাড়ে।
         </p>
         <span className="mt-6 inline-block px-5 py-2 bg-white text-pink-600 font-semibold rounded-full shadow-md group-hover:scale-105 transform transition text-center">
-          আরও জানুন
+          Learn more
         </span>
       </div>
     </div>
@@ -124,7 +124,7 @@ export default function HomePage() {
           কোনো সোশ্যাল প্ল্যাটফর্মে লিড বা এনগেজমেন্ট মিস হবে না। সব কমেন্ট ও মেসেজ স্বয়ংক্রিয়ভাবে হ্যান্ডেল করুন।
         </p>
         <span className="mt-6 inline-block px-5 py-2 bg-white text-indigo-600 font-semibold rounded-full shadow-md group-hover:scale-105 transform transition text-center">
-          আরও জানুন
+          Learn more
         </span>
       </div>
     </div>
@@ -138,7 +138,7 @@ export default function HomePage() {
           Facebook, Messenger, WhatsApp, YouTube এবং আরও অনেক প্ল্যাটফর্মকে এক ড্যাশবোর্ডে সংযুক্ত করুন।
         </p>
         <span className="mt-6 inline-block px-5 py-2 bg-white text-teal-600 font-semibold rounded-full shadow-md group-hover:scale-105 transform transition text-center">
-          আরও জানুন
+          Learn more
         </span>
       </div>
     </div>
@@ -152,7 +152,7 @@ export default function HomePage() {
           এনগেজমেন্ট, লিড এবং কনভার্শন ট্র্যাক করুন শক্তিশালী রিপোর্টিং টুলসের মাধ্যমে।
         </p>
         <span className="mt-6 inline-block px-5 py-2 bg-white text-orange-600 font-semibold rounded-full shadow-md group-hover:scale-105 transform transition text-center">
-          আরও জানুন
+          Learn more
         </span>
       </div>
     </div>
@@ -176,7 +176,7 @@ export default function HomePage() {
       href="/about"
       className="inline-block px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transform hover:scale-105 transition"
     >
-      আরও জানুন
+      Learn more
     </a>
   </div>
 </section>
@@ -207,8 +207,8 @@ export default function HomePage() {
       className="p-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition shadow-sm hover:shadow-md"
       rows={6}
     ></textarea>
-    <button className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 shadow-md hover:shadow-lg transition font-semibold transform hover:scale-105">
-      বার্তা পাঠান
+    <button className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 shadow-md hover:shadow-lg transition font-semibold transform hover:scale-105 cursor-pointer">
+      Send message
     </button>
   </div>
 </section>
